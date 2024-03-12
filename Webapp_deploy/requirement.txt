@@ -1,0 +1,10 @@
+keras==2.10.0
+pandas
+Pillow
+streamlit
+numpy
+tensorflow
+streamlit-drawable-canvas
+opencv-contrib-python==4.6.0.66
+opencv-python==4.6.0.66
+opencv-python-headless==4.6.0.66

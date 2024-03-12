@@ -48,10 +48,26 @@
 
 
 - ### การโหลดข้อมูล
--
+
 - ### การสร้างโมเดล VGG16
 - ### การสร้างโมเดล LeNet5
 - ### การเทรนโมเดล
 
 - ### การวัดประสิทธิภาพโมเดล
+  - `Classification Report` จะประกอบด้วยค่า precision, recall, F1-score และ support สำหรับแต่ละคลาสที่ได้จากการทำนายของโมเดล การวิเคราะห์ classification report ช่วยให้เข้าใจถึงประสิทธิภาพของโมเดลในการจำแนกคลาสแต่ละคลาสอย่างละเอียด
+  การทำ Classification Report สามารถคำนวณได้ตามขั้นตอนต่อไปนี้
+
+  ```py
+  from sklearn.metrics import classification_report
+
+  report = classification_report(true_labels, y_pred, target_names=list(train_ds.class_indices.keys()))
+  print("Classification Report:")
+  print(report)
+  ```
+  ขั้นตอนที่นำมาใช้คือการเรียกใช้ฟังก์ชัน classification_report จากไลบรารี Scikit-learn โดยกำหนดพารามิเตอร์ดังนี้
+    - true_labels: คือค่าจริงของป้ายกำกับ (ground truth) ของข้อมูลที่ใช้ทดสอบโมเดล
+    - y_pred: คือค่าทำนายที่โมเดลทำได้สำหรับข้อมูลทดสอบ
+    - target_names: รายการชื่อของหมวดหมู่หรือป้ายกำกับที่ใช้ในการจำแนก ซึ่งสามารถระบุได้จาก 
+    - train_ds.class_indices.keys() ซึ่งเป็นชื่อของหมวดหมู่ที่มีอยู่ในชุดข้อมูลการฝึก
+
 - ### รวมถึงการใช้โมเดล

@@ -33,7 +33,7 @@
 
 ## \*การ preprocess ข้อมูล (2_Data clean.ipynb, 3_split_valid_test.ipynb)
 
-#### ขั้นตอนการทำำ Data Cleaning (required)
+#### ขั้นตอนการทำ Data Cleaning (required)
 
 - การสร้างโฟลเดอร์สำหรับแต่ละตัวอักษร เราจะสร้างโฟลเดอร์ใหม่สำหรับแต่ละตัวอักษรโดยใช้ Unicode character เป็นชื่อโฟลเดอร์ เพื่อให้ง่ายต่อการจัดการและสร้างฐานข้อมูลสำหรับการฝึกโมเดล
 
@@ -134,8 +134,22 @@ history = model.fit(
   
   ผลลัพธ์ที่ได้จะเป็นเมทริกซ์ที่แสดงจำนวนของตัวอย่างที่โมเดลทำนายได้ถูกและผิดสำหรับแต่ละคลาสหรือหมวดหมู่ที่มีอยู่ในข้อมูลทดสอบ จึงช่วยในการวิเคราะห์ประสิทธิภาพของโมเดลในการจำแนกประเภทและการจำแนกป้ายกำกับในชุดข้อมูลทดสอบ
 
-## \*รวมถึงการใช้โมเดล
+  ## \*visulize file
+  - ไฟล์แสดงตัวอย่างผลลัพธ์ที่ได้จากการทำ Image augmentation และการทำ Image pre-processing
+  ```py
+  - Image augmentation : ทำการเลื่อนไปด้านซ้าย ขวา และทำการซูมรูปภาพที่ละ 0.1
+  - Image preprocessing : ทำ Binary Thresholding
+  ```
 
-## \*visulize file
 
+
+
+## รวมถึงการใช้โมเดล
 ## \*model test file
+
+- ใช้ในการทดลองทำนายโมเดลจากภายนอกโดยการแนบรูปภาพ โดยใช้ model_load  และ model.predict
+```py
+- ทดลองรูปแบบที่ Deploy ลงบน Huggingface space
+1. LeNet5_model : https://huggingface.co/spaces/Tanaanan/NihonGO_MLPmodel
+2. VGG16_model : https://huggingface.co/spaces/Tanaanan/NihonGO_JLPTN5
+```

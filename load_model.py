@@ -8,7 +8,7 @@ model_url = 'https://firebasestorage.googleapis.com/v0/b/countdown-jobfiar.appsp
 def load(url, name, filename):
     response = requests.get(url, stream=True)  # Stream download for efficiency
     if response.status_code == 200:
-        with open('my_data.zip', 'wb') as f:
+        with open(filename, 'wb') as f:
             for chunk in response.iter_content(1024):  # Download in chunks
                 f.write(chunk)
         print(name, 'download complete!')

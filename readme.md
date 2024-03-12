@@ -153,3 +153,10 @@ history = model.fit(
 1. LeNet5_model : https://huggingface.co/spaces/Tanaanan/NihonGO_MLPmodel
 2. VGG16_model : https://huggingface.co/spaces/Tanaanan/NihonGO_JLPTN5
 ```
+
+## เอกสาร
+## \*NihonGO_slide.pdf
+- เอกสารประกอบการนำเสนอ
+
+## \*NihonGO!_Docs.pdf
+- รูปเล่มรายงานโครงงาน

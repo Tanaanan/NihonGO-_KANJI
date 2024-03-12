@@ -15,10 +15,10 @@ def load(url, name, filename):
     else:
         print('Error downloading file:', response.status_code)
 
-
+# load unclean datasets
 load(url, 'kanji_small', 'kanji_small.zip')
 with zipfile.ZipFile('kanji_small.zip', 'r') as zip_ref:
-    zip_ref.extractall('extracted_data')  # Specify a desired extraction path
+    zip_ref.extractall('kanji_small')  # Specify a desired extraction path
 print('Extraction kanji_small completed!')
-
+# load final vgg16 model
 load(model_url, 'model', 'vgg16_model.h5')
